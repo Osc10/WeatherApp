@@ -1,0 +1,93 @@
+body {
+	background: blue;
+}
+
+/*Sunny*/
+.sunny { 
+	animation: sunny 15s linear infinite;
+	background: linear-gradient(0deg, rgba(255,255,0,0) 0%, rgba(255,255,0,0.3) 50%, rgba(255,255,0,0) 100%); 
+	height: 140px;
+	width: 20px; 
+	margin-left: 300px;
+	position: absolute;
+	animation-name: sunnyrays, sunnyrotate;
+	animation-duration: 8s, 20s;
+	animation-iteration-count: infinite;
+}
+.sunny:before {
+	background: linear-gradient(0deg, rgba(255,255,0,0) 0%, rgba(255,255,0,0.3) 50%, rgba(255,255,0,0) 100%);
+	content: '';
+	height: 140px; 
+	width: 20px;
+	opacity: 1; 
+	position: absolute;
+	transform: rotate(90deg);
+	animation: sunnyrays 8s infinite;
+}
+.sunny:after {
+	background: #FFEE44; 
+	border-radius: 50%; 
+	content: ''; 
+	height: 80px;
+	width: 80px;  
+	position: absolute; 
+	left: -30px; 
+	top: 30px;
+	animation: sunnyring 8s ease-in-out infinite;
+}
+@keyframes sunnyrotate { 
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+@keyframes sunnyring {
+
+	0% {box-shadow: rgba(255,255,0,0.5) 0 0 6px 10px; }
+	50% {box-shadow: rgba(255, 255, 0, 0.5) 0 0 6px 5px; }
+	100% {box-shadow: rgba(255,255,0,0.5) 0 0 6px 10px; }
+}
+
+@keyframes sunnyrays {
+	0% {opacity: 0.97;}
+	50% {opacity: 0.93;}
+	0% {opacity: 0.97;}
+}
+
+/*Cloudy*/
+
+.cloudy {
+	animation: cloudy 5s ease-in-out infinite;
+	background: #FFFFFF;
+	border-radius: 50%;
+	box-shadow: 
+		#FFFFFF 65px -15px 0 -5px, 
+		#FFFFFF 25px -25px, 
+		#FFFFFF 30px 10px, 
+		#FFFFFF 60px 15px 0 -10px, 
+		#FFFFFF 85px 5px 0 -5px;
+	height: 50px;
+	width: 50px; 
+	margin-left: -60px;
+	position: absolute;
+	left: 255px;
+	top: 70px; 
+}
+.cloudy:after {
+	animation: cloudy_shadow 5s ease-in-out infinite;
+	background: #000000;
+	border-radius: 50%;
+	content: '';
+	height: 15px;
+	width: 120px;
+	opacity: 0.2;
+	position: absolute;
+	left: 5px; 
+	bottom: -60px;
+  transform: scale(.7);
+}
+@keyframes cloudy {
+	50% { transform: translateY(-20px); }
+}
+@keyframes cloudy_shadow {
+	50% { transform: translateY(20px) scale(1); opacity:.05; }
+}
