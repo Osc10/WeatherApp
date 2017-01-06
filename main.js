@@ -1,20 +1,21 @@
-$(".rainy, .stormy, .starry, .sunny, .snowy, .cloudy, .temperatureC, .temperatureF").hide();
+$(".rainy, .stormy, .starry, .fadeSun, .snowy, .cloudy, .temperatureF, .card, .fadeCube").hide();
 
 $(function() {
 	$.get("http://ipinfo.io", function(response) {
 		$.ajax({	
 			url: "http://api.openweathermap.org/data/2.5/weather?q=" + response["city"] + "&APPID=0e28df2e09df619941b8e264d75a4a78" ,
 			success: function(data) {
-				$(".location").html(data["name"] + ", " + data["sys"]["country"]);
-				$(".temperatureC").html(Math.floor((data["main"]["temp"] - 273.15)*10)/10 + "&degC").fadeIn(1000);
+				$(".location").html(data["name"] + ", " + data["sys"]["country"])
+				$(".temperatureC").html(Math.floor((data["main"]["temp"] - 273.15)*10)/10 + "&degC");
 				$(".temperatureF").html((Math.floor(((data["main"]["temp"] - 273.15)*(9/5) + 32)*10)/10) + "&degF");
 				$(".description").html(data["weather"][0]["main"])
+				$(".card, .fadeCube").fadeIn(2000);
 				switch (data["weather"][0]["icon"]) {
 					case "01d":
-						$(".sunny").fadeIn(2000);
+						$(".fadeSun").fadeIn(2000);
 						break;
 					case "02d":
-						$(".sunny, .cloudy").fadeIn(2000);
+						$(".fadeSun, .cloudy").fadeIn(2000);
 						break;
 					case "03d":
 						$(".cloudy").fadeIn(2000);
@@ -26,7 +27,7 @@ $(function() {
 						$(".rainy").fadeIn(2000);
 						break;
 					case "10d":
-						$(".sunny, .rainy").fadeIn(2000);
+						$(".fadeSun, .rainy").fadeIn(2000);
 						break;
 					case "11d":
 						$(".stormy").fadeIn(2000);
@@ -79,6 +80,24 @@ $(function() {
 		$(this).fadeOut(750, function() {
 			$(".temperatureC").fadeIn(750);
 		});
+	});
+	$(".sun").on("click", function() {
+		$(".fadeSun").fadeToggle(1000);
+	});
+	$(".moon").on("click", function() {
+		$(".starry").fadeToggle(1000);
+	});
+	$(".clouds").on("click", function() {
+		$(".cloudy").fadeToggle(1000);
+	});
+	$(".storm").on("click", function() {
+		$(".stormy").fadeToggle(1000);
+	});
+	$(".snow").on("click", function() {
+		$(".snowy").fadeToggle(1000);
+	});
+	$(".rain").on("click", function() {
+		$(".rainy").fadeToggle(1000);
 	});
 });
 

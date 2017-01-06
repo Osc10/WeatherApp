@@ -2,14 +2,17 @@ body {
 	background: #000d1a;
 }
 
+a{
+	color: black;
+}
+
 .card {
 	border: 10px solid rgba(255, 255, 255, 0.8);
 	background: #000d1a;
 	border-radius: 7px;
     width: 50vw;
     height: 60vh;
-    padding: 1%;
-    margin-top: 20vh;
+    margin-top: 15vh;
     margin-left: 30vw;
     text-align: center;
     color: rgba(255, 255, 255, 0.8);
@@ -29,7 +32,7 @@ button {
 
 .perspective {
 	font-size: 5vh;
-    top: 60vh;
+    top: 55vh;
     left: 20vw;
     position: absolute;
 	-webkit-transform: rotateX(45deg) rotateZ(45deg);
@@ -86,7 +89,7 @@ button {
 	background: linear-gradient(0deg, rgba(255,255,0,0) 0%, rgba(255,255,0,0.3) 50%, rgba(255,255,0,0) 100%); 
 	height: 21vh;
 	width: 3vh; 
-    top: 36vh;
+    top: 31vh;
     left: 23vw;
 	position: absolute;
 	animation-name: sunnyrays, sunnyrotate;
@@ -137,18 +140,18 @@ button {
 
 .cloudy {
 	animation: cloudy 5s ease-in-out infinite;
-	background: white;
+	background: #ddd;
 	border-radius: 50%;
 	box-shadow: 
-		9.75vh -2.25vh 0 -0.75vh white, 
-		5.25vh -3.75vh white, 
-		4.5vh 1.5vh white, 
-		9vh 2.25vh 0 -1.5vh white, 
-		12.75vh 0.75vh 0 -0.75vh white;
+		9.75vh -2.25vh 0 -0.75vh #ddd, 
+		5.25vh -3.75vh #ddd, 
+		4.5vh 1.5vh #ddd, 
+		9vh 2.25vh 0 -1.5vh #ddd, 
+		12.75vh 0.75vh 0 -0.75vh #ddd;
 	height: 7.5vh;
 	width: 7.5vh; 
 	position: absolute;
-	top: 41.5vh;
+	top: 36.5vh;
 	left: 19vw;
 	z-index: 1;
 }
@@ -188,7 +191,7 @@ button {
 	height: 7.5vh;
 	width: 7.5vh; 
 	position: absolute;
-	top: 41.5vh;
+	top: 36.5vh;
 	left: 19vw;
 	z-index: 1;
 }
@@ -339,7 +342,7 @@ button {
 	height: 0.6vh;
 	width: 0.6vh; 
 	position: absolute;
-	top: 49vh;
+	top: 44vh;
 	left: 23vw;
 	z-index: -1;
 }
@@ -393,7 +396,7 @@ button {
 	height: 7.5vh;
 	width: 7.5vh; 
 	position: absolute;
-	top: 41.5vh;
+	top: 36.5vh;
 	left: 19vw;
 	z-index: 1;
 }
@@ -534,7 +537,7 @@ button {
 	height: 7.5vh;
 	width: 7.5vh; 
 	position: absolute;
-	top: 41.5vh;
+	top: 36.5vh;
 	left: 19vw;
 	z-index: 1;
 }
